@@ -1,9 +1,9 @@
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 public class Performance {
-    public static void main(String[]args){
+    public static void main(String[] args) {
         int[] sizes = {100, 500, 1000, 2000, 5000, 10000, 20000, 75000, 150000};
 
         SortingAlgorithm bubbleSort = new bubbleSort();
@@ -14,58 +14,48 @@ public class Performance {
         SortingAlgorithm insertionSort = new insertionSort();
 
         try {
-            PrintWriter writer = new PrintWriter(new FileWriter("KsortedReport2.txt"));
+            FileWriter writer = new FileWriter("KsortedReport2.txt");
 
-
-            writer.println("Insertion Sort:");
-            System.out.println("Insertion Sort:");
+            writer.write("Insertion Sort:\n");
             Tester tester = new Tester(insertionSort);
-            for(int i = 0; i < sizes.length; i++){
-                writer.println(tester.test(20, sizes[i]));
+            for (int i = 0; i < sizes.length; i++) {
+                writer.write(tester.test(20, sizes[i]) + "\n");
             }
 
-            writer.println("Bubble Sort:");
-            System.out.println("Bubble Sort:");
+            writer.write("Bubble Sort:\n");
             tester = new Tester(bubbleSort);
-            for(int i = 0; i < sizes.length; i++){
-                writer.println(tester.test(20, sizes[i]));
+            for (int i = 0; i < sizes.length; i++) {
+                writer.write(tester.test(20, sizes[i]) + "\n");
             }
 
-            writer.println("Merge Sort:");
-            System.out.println("Merge Sort:");
+            writer.write("Merge Sort:\n");
             tester = new Tester(mergeSort);
-            for(int i = 0; i < sizes.length; i++){
-                writer.println(tester.test(20, sizes[i]));
+            for (int i = 0; i < sizes.length; i++) {
+                writer.write(tester.test(20, sizes[i]) + "\n");
             }
 
-            writer.println("Selection Sort:");
-            System.out.println("Selection Sort:");
+            writer.write("Selection Sort:\n");
             tester = new Tester(selectionSort);
-            for(int i = 0; i < sizes.length; i++){
-                writer.println(tester.test(20, sizes[i]));
+            for (int i = 0; i < sizes.length; i++) {
+                writer.write(tester.test(20, sizes[i]) + "\n");
             }
 
-            writer.println("Shell Sort:");
-            System.out.println("Shell Sort:");
+            writer.write("Shell Sort:\n");
             tester = new Tester(shellSort);
-            for(int i = 0; i < sizes.length; i++){
-                writer.println(tester.test(20, sizes[i]));
+            for (int i = 0; i < sizes.length; i++) {
+                writer.write(tester.test(20, sizes[i]) + "\n");
             }
 
-            writer.println("Quick Sort:");
-            System.out.println("Quick Sort:");
+            writer.write("Quick Sort:\n");
             tester = new Tester(quickSort);
-            for(int i = 0; i < sizes.length; i++){
-                writer.println(tester.test(20, sizes[i]));
+            for (int i = 0; i < sizes.length; i++) {
+                writer.write(tester.test(20, sizes[i]) + "\n");
             }
 
-            writer.flush();
             writer.close();
 
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
-
 }

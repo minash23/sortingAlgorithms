@@ -16,7 +16,7 @@ public class Tester {
             arr[i] = random.nextInt();
         }
 
-        //UNCOMMENT THIS CODE TO MAKE K SORTED ARRAYS WHEN YOU RUN PERFORMANCE
+        //UNCOMMENT THIS CODE TO MAKE K SORTED ARRAYS BEFORE YOU RUN PERFORMANCE
         //generateKSorted(arr);
 
         long startTime = System.nanoTime();
